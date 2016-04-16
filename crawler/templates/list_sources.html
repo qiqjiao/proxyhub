@@ -1,0 +1,20 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+<table>
+    <tr><th>Name</th><th>Last Update</th><th>Success</th><th>Resources Found</th><th>Edit</th></tr>
+{% for s in sources %}
+    <tr>
+      <td>{{s.name}}</td>
+      <td>{{s.last_fetch_time}}</td>
+      <td>{{s.last_fetch_success}}</td>
+      <td>{{s.last_fetch_resources_found}}</td>
+      <td><a href="/crawler/edit_source/{{s.id}}/">Edit</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+<a href="/crawler/create_source">Create A New Source</a>

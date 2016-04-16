@@ -1,0 +1,18 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+<table>
+    <tr><th>IP</th><th>Port</th><th>Type</th><th>Last Check Time</th><th>Source</th></tr>
+{% for e in endpoints %}
+    <tr>
+      <td>{{e.ip}}</td>
+      <td>{{e.port}}</td>
+      <td>{{e.proxy_types_str}}</td>
+      <td>{{e.last_checked_time}}</td>
+      <td>{{e.source_names}}</td>
+    </tr>
+{% endfor %}
+</table>
